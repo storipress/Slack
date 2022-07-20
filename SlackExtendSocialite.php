@@ -14,5 +14,7 @@ class SlackExtendSocialite
     public function handle(SocialiteWasCalled $socialiteWasCalled)
     {
         $socialiteWasCalled->extendSocialite('slack', Provider::class);
+
+        $socialiteWasCalled->extendSocialite('slack2', Provider2::class);
     }
 }
