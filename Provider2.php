@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Log;
 use Psr\Http\Message\ResponseInterface;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
 use SocialiteProviders\Manager\OAuth2\User;
@@ -157,7 +156,6 @@ class Provider2 extends AbstractProvider
      */
     protected function getUserByToken($token)
     {
-        Log::debug('token', [$token]);
         try {
             $response = $this->getHttpClient()->get(
                 'https://slack.com/api/users.identity',
